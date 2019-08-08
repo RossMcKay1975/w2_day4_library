@@ -8,4 +8,12 @@ attr_reader :name
   end
 
 
+  def add_to_library(book)
+    @books << book
+  end
+
+  def book_count
+    @books.count
+  end
+
 end
