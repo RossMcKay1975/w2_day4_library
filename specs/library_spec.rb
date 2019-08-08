@@ -19,4 +19,23 @@ class TestLibrary < MiniTest::Test
     @library.add_to_library(@book1)
     assert_equal(1, @library.book_count())
   end
+
+  def test_lend_book_to_customer
+    # binding.pry
+    @library.add_to_library(@book1)
+    @library.lend_book_to_customer(@book1, @customer1)
+    assert_equal(1, @customer1.borrow_count())
+  end
+
+  def test_lend_book_to_customer__full_lifecycle
+    @library.add_to_library(@book1)
+    @library.add_to_library(@book2)
+    @library.add_to_library(@book3)
+    @library.remove_book_from_library_stock(@book1)
+    @library.lend_book_to_customer(@book1, @customer1)
+    assert_equal(2, @library.book_count())
+    assert_equal(1, @customer1.borrow_count())
+  end
+
+
 end

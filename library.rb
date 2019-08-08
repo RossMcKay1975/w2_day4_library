@@ -16,4 +16,11 @@ attr_reader :name
     @books.count
   end
 
+  def lend_book_to_customer(book, customer)
+    customer.borrow_book(book)
+  end
+
+  def remove_book_from_library_stock(book)
+    @books.delete(book)
+  end
 end

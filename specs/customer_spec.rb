@@ -15,7 +15,7 @@ class TestCustomer < MiniTest::Test
   end
 
   def test_borrow_count__increased
-    @customer1.increase_borrow_count(1)
+    @customer1.borrow_book(1)
     assert_equal(1, @customer1.borrow_count())
   end
 end

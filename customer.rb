@@ -8,8 +8,8 @@ attr_reader :name, :borrow_count
     @borrow_count = borrow_count
   end
 
-  def increase_borrow_count(amount)
-    @borrow_count += amount
+  def borrow_book(amount)
+    @borrow_count += 1
   end
 
 end
